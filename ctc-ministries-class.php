@@ -21,7 +21,7 @@ if ( ! class_exists( 'CTC_Ministries' ) ) {
 				if( defined( 'CTMB_URL' ) )
 					require_once trailingslashit( 'CTMB_URL' ) . 'ct-meta-box.php';
 				else
-					require_once require_once( sprintf( "%s/includes/libraries/ct-meta-box/ct-meta-box.php", dirname(__FILE__) ) );
+					require_once require_once( sprintf( "%s/includes/ct-meta-box/ct-meta-box.php", dirname(__FILE__) ) );
 				require_once require_once( sprintf( "%s/ctc-ministries-fields.php", dirname(__FILE__) ) );
 			}
 			
