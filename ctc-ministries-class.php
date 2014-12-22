@@ -17,12 +17,8 @@ if ( ! class_exists( 'CTC_Ministries' ) ) {
 			// Church Theme Content is REQUIRED
 			if ( ! class_exists( 'Church_Theme_Content' ) ) return;
 			if ( is_admin() ) {
-				// CTMB_URL is defined in CTC
-				if( defined( 'CTMB_URL' ) )
-					require_once trailingslashit( 'CTMB_URL' ) . 'ct-meta-box.php';
-				else
-					require_once require_once( sprintf( "%s/includes/ct-meta-box/ct-meta-box.php", dirname(__FILE__) ) );
-				require_once require_once( sprintf( "%s/ctc-ministries-fields.php", dirname(__FILE__) ) );
+				require_once( sprintf( "%s/includes/ct-meta-box/ct-meta-box.php", dirname(__FILE__) ) );
+				require_once( sprintf( "%s/ctc-ministries-fields.php", dirname(__FILE__) ) );
 			}
 			
 			add_action( 'init', array( &$this, 'ctc_register_post_type_ministry' ) ); // register post type
@@ -106,7 +102,7 @@ if ( ! class_exists( 'CTC_Ministries' ) ) {
 			if( ! $name ) return $output;
 			
 			$args = array( 
-				'name' = $name,
+				'name' => $name,
 				'post_type' => 'ctc_ministry',
 				'post_statys' => 'publish',
 				'post_per_page' => 1,
@@ -129,8 +125,8 @@ if ( ! class_exists( 'CTC_Ministries' ) ) {
 				$email = get_post_meta( $post->ID, '_ctc_ministry_poc_email', true ); 
 				$phone = get_post_meta( $post->ID, '_ctc_ministry_poc_phone', true );
 				
-				$result = '<div class="ctc-ministry ' . $class; . '"> ';
-				$result .= '<h3>' . get_the_title(); . '</h3>';
+				$result = '<div class="ctc-ministry ' . $class . '"> ';
+				$result .= '<h3>' . get_the_title() . '</h3>';
 				$result .= '<p> ' . get_the_post_thumbnail( $post->ID, 'post-thumbnail', array( 'class' => 'ctc-ministry-img')) ;
 				$result .= get_the_content(); 
 				$result .= '</p>';
@@ -142,7 +138,7 @@ if ( ! class_exists( 'CTC_Ministries' ) ) {
 						$result .= ' <i class="fa-envelope"></i> <span><a href="mailto:'. $email .'" class="ctc-ministry-email">'. $email .'</a></span><br/>';
 					if( $phone )
 						$result .= ' <i class="fa-phone"></i> <span>'. $phone .'</span>';
-					$result .= '</div>'
+					$result .= '</div>'; 
 				endif; 
 				$result .= '</div>';
 			}

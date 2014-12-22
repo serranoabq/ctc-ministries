@@ -1,6 +1,6 @@
 <?php
 /*
-    Plugin Name: Church Ministries
+    Plugin Name: CTC Ministries
     Description: Plugin to add a Ministry post type. Along the same lines as Church Theme Content, it only handles the information collection, not the display. It does not require CTC. A compatible theme is required to 
     Version: 1.0
     Author: Justin R. Serrano
